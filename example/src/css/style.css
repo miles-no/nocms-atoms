@@ -1,0 +1,707 @@
+body {
+  background: #f1f4f9;
+}
+
+.container {
+  width: 1170px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-wrapper {
+
+}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Nunito:400,300,700);
+/* ==========================================================================
+Typography
+========================================================================== */
+p {
+  font-size: 16px;
+  line-height: 33px;
+  color: rgba(28, 54, 83, 0.6);
+  padding-bottom: 20px;
+  margin: 0; }
+
+h1 {
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 60px;
+  }
+
+h2 {
+  font-size: 40px;
+  font-weight: 300;
+  color: #3D4351;
+  font-weight: normal;
+ }
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #3D4351;
+  font-weight: normal;
+ }
+
+h4 {
+  font-size: 18px; }
+
+h5 {
+  font-size: 15px;
+  color: #3D4351;
+  text-transform: uppercase;
+  font-weight: 500; }
+
+.hero {
+  min-height: 550px;
+  background: url(../img/hero.jpg) center center;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+}
+
+.hero .container {
+  padding-top: 10%;
+}
+
+.hero p {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 80px;
+}
+
+.small-image {
+  width: 400px;
+}
+
+
+/*************** Material icons sizing *************/
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+/* ==========================================================================
+Global Styles
+========================================================================== */
+
+a {
+  color: #FF5274;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+  -webkit-transition-property: color, border-color, background-color;
+  transition-property: color, border-color, background-color; }
+
+a:hover, a:focus {
+  color: #D7405D;
+  text-decoration: none; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: rgba(28, 54, 83, 0.6);
+  -webkit-text-size-adjust: 100%; }
+
+ul, ol {
+  margin: 0;
+  padding: 0; }
+
+ul li {
+  list-style: none; }
+  .DraftEditor-editorContainer,.DraftEditor-root,.public-DraftEditor-content {
+      height: inherit;
+      text-align: left;
+      text-align: initial
+  }
+
+  .public-DraftEditor-content[contenteditable=true] {
+      -webkit-user-modify: read-write-plaintext-only
+  }
+
+  .DraftEditor-root {
+      position: relative
+  }
+
+  .DraftEditor-editorContainer {
+      background-color: rgba(255,255,255,0);
+      border-left: .1px solid transparent;
+      position: relative;
+      z-index: 1
+  }
+
+  .public-DraftEditor-block {
+      position: relative
+  }
+
+  .DraftEditor-alignLeft .public-DraftStyleDefault-block {
+      text-align: left
+  }
+
+  .DraftEditor-alignLeft .public-DraftEditorPlaceholder-root {
+      left: 0;
+      text-align: left
+  }
+
+  .DraftEditor-alignCenter .public-DraftStyleDefault-block {
+      text-align: center
+  }
+
+  .DraftEditor-alignCenter .public-DraftEditorPlaceholder-root {
+      margin: 0 auto;
+      text-align: center;
+      width: 100%
+  }
+
+  .DraftEditor-alignRight .public-DraftStyleDefault-block {
+      text-align: right
+  }
+
+  .DraftEditor-alignRight .public-DraftEditorPlaceholder-root {
+      right: 0;
+      text-align: right
+  }
+
+  .public-DraftEditorPlaceholder-root {
+      color: #9197a3;
+      position: absolute;
+      z-index: 0
+  }
+
+  .public-DraftEditorPlaceholder-hasFocus {
+      color: #bdc1c9
+  }
+
+  .DraftEditorPlaceholder-hidden {
+      display: none
+  }
+
+  .public-DraftStyleDefault-block {
+      position: relative;
+      white-space: pre-wrap
+  }
+
+  .public-DraftStyleDefault-ltr {
+      direction: ltr;
+      text-align: left
+  }
+
+  .public-DraftStyleDefault-rtl {
+      direction: rtl;
+      text-align: right
+  }
+
+  .public-DraftStyleDefault-listLTR {
+      direction: ltr
+  }
+
+  .public-DraftStyleDefault-listRTL {
+      direction: rtl
+  }
+
+  .public-DraftStyleDefault-ol,.public-DraftStyleDefault-ul {
+      margin: 16px 0;
+      padding: 0
+  }
+
+  .public-DraftStyleDefault-depth0.public-DraftStyleDefault-listLTR {
+      margin-left: 1.5em
+  }
+
+  .public-DraftStyleDefault-depth0.public-DraftStyleDefault-listRTL {
+      margin-right: 1.5em
+  }
+
+  .public-DraftStyleDefault-depth1.public-DraftStyleDefault-listLTR {
+      margin-left: 3em
+  }
+
+  .public-DraftStyleDefault-depth1.public-DraftStyleDefault-listRTL {
+      margin-right: 3em
+  }
+
+  .public-DraftStyleDefault-depth2.public-DraftStyleDefault-listLTR {
+      margin-left: 4.5em
+  }
+
+  .public-DraftStyleDefault-depth2.public-DraftStyleDefault-listRTL {
+      margin-right: 4.5em
+  }
+
+  .public-DraftStyleDefault-depth3.public-DraftStyleDefault-listLTR {
+      margin-left: 6em
+  }
+
+  .public-DraftStyleDefault-depth3.public-DraftStyleDefault-listRTL {
+      margin-right: 6em
+  }
+
+  .public-DraftStyleDefault-depth4.public-DraftStyleDefault-listLTR {
+      margin-left: 7.5em
+  }
+
+  .public-DraftStyleDefault-depth4.public-DraftStyleDefault-listRTL {
+      margin-right: 7.5em
+  }
+
+  .public-DraftStyleDefault-unorderedListItem {
+      list-style-type: square;
+      position: relative
+  }
+
+  .public-DraftStyleDefault-unorderedListItem.public-DraftStyleDefault-depth0 {
+      list-style-type: disc
+  }
+
+  .public-DraftStyleDefault-unorderedListItem.public-DraftStyleDefault-depth1 {
+      list-style-type: circle
+  }
+
+  .public-DraftStyleDefault-orderedListItem {
+      list-style-type: none;
+      position: relative
+  }
+
+  .public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-listLTR:before {
+      left: -36px;
+      position: absolute;
+      text-align: right;
+      width: 30px
+  }
+
+  .public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-listRTL:before {
+      position: absolute;
+      right: -36px;
+      text-align: left;
+      width: 30px
+  }
+
+  .public-DraftStyleDefault-orderedListItem:before {
+      content: counter(ol0) ". ";
+      counter-increment: ol0
+  }
+
+  .public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-depth1:before {
+      content: counter(ol1) ". ";
+      counter-increment: ol1;
+  }
+
+  .public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-depth2:before {
+      content: counter(ol2) ". ";
+      counter-increment: ol2
+  }
+
+  .public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-depth3:before {
+      content: counter(ol3) ". ";
+      counter-increment: ol3
+  }
+
+  .public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-depth4:before {
+      content: counter(ol4) ". ";
+      counter-increment: ol4
+  }
+
+  .public-DraftStyleDefault-depth0.public-DraftStyleDefault-reset {
+      counter-reset: ol0
+  }
+
+  .public-DraftStyleDefault-depth1.public-DraftStyleDefault-reset {
+      counter-reset: ol1
+  }
+
+  .public-DraftStyleDefault-depth2.public-DraftStyleDefault-reset {
+      counter-reset: ol2
+  }
+
+  .public-DraftStyleDefault-depth3.public-DraftStyleDefault-reset {
+      counter-reset: ol3
+  }
+
+  .public-DraftStyleDefault-depth4.public-DraftStyleDefault-reset {
+      counter-reset: ol4
+  }
+
+  .public-DraftEditorPlaceholder-root {
+    color: #9197a3;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+  }
+
+  .DraftEditor-editorContainer {
+    z-index: 1;
+    position: relative;
+  }
+
+  .public-DraftEditorPlaceholder-root,
+  .public-DraftEditor-content {
+    padding: 8px 9.6px;
+    padding: .5rem .6rem;
+  }
+
+  .text-editor__controls {
+    text-align: left;
+    display: inline-block;
+    background-color: #303030;
+    padding: 0 5px;
+    border-radius: 3px;
+  }
+
+  .formatting-button {
+    height: 25px;
+    width: 25px;
+    line-height: 19px;
+    margin-right: 3px;
+    padding: 4px;
+    display: inline-block;
+    font-size: 15px !important;
+    font-weight: bold;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+  }
+
+  .formatting-button:hover, .formatting-button:focus{
+    color: #00FFA7;
+    background-color: transparent
+  }
+
+  .formatting-button .material-icons{
+    line-height: 19px
+  }
+
+  .formatting-button_active {
+    background-color: #8A9097;
+  }
+
+  .text-editor__body {
+    color: #414A52;
+    background-color: transparent;
+    position: relative;
+    cursor: text;
+    display: inline-block;
+    border: 1px solid transparent;
+    vertical-align: middle;
+    width: 100%
+  }
+
+  .text-editor__body:editor-link{
+    text-decoration: underline;
+    color: #b8261c
+  }
+
+  .text-editor__body:hover,
+  .public-DraftEditorPlaceholder-root:focus,
+  .public-DraftEditor-content:focus {
+    border: 1px solid #f4f4f4;
+    border-bottom: 1px solid #00FFA7;
+    box-shadow: inset 0 -2px 0 0 #00FFA7;
+    background-color: rgba(255, 255, 255, 0.85);
+    outline: none;
+  }
+
+  .text-editor__link-url {
+    background-color: #303030;
+    border-radius: 3px;
+    position:absolute;
+    color: #ffffff;
+    padding: 0 10px;
+    top: -165px;
+    left: 40px;
+    font-size: 14px;
+    z-index: 20
+  }
+
+  .text-editor__link-url > div{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center
+  }
+
+  .text-editor__link-url > div > button{
+    background: transparent;
+    color: #95989A;
+    margin-right: -10px
+  }
+
+  .text-editor__link-url label{
+    width: 50px;
+    display: inline-block
+  }
+
+  .text-editor__link-url .button-container{
+    padding: 15px
+  }
+
+  .text-editor__link-url .button-container button{
+    margin: 0 auto;
+    border: 1px solid #95989A
+  }
+
+  .text-editor__link-url .button-container button:hover,
+      .text-editor__link-url .button-container button:focus{
+    color: var(admin-peach);
+    border: 1px solid #F06A48
+  }
+
+  .text-editor__link-url input {
+    display: inline-block;
+    color: #ffffff;
+    background: #95989A;
+    border: none;
+    width: auto;
+  }
+
+  .text-editor__link-url input:hover,
+  .text-editor__link-url input:focus,
+  .text-editor__link-url input:active {
+    border: none;
+    background: #95989A;
+    box-shadow: none;
+    color: #ffffff;
+  }
+
+  .text-editor__link-header {
+    text-transform: uppercase;
+  }
+
+   textarea{
+    width: 100%;
+    background: transparent;
+    border: 1px solid transparent;
+    color: inherit
+  }
+
+   textarea:hover,
+   textarea:focus,
+   textarea:active {
+    border: 1px solid #f4f4f4;
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid #00FFA7;
+    box-shadow: inset 0 -2px 0 0 #00FFA7;
+    color: #303030
+  }
+
+  input{
+    background: transparent;
+    border: 1px solid transparent;
+    color: inherit
+  }
+
+  input:hover,
+  input:focus,
+  input:active{
+    border: 1px solid #f4f4f4;
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid #00FFA7;
+    box-shadow: inset 0 -2px 0 0 #00FFA7;
+    color: #303030
+  }
+
+  /* ==========================================================================
+Button styles.
+This is for the publisher's interface. Intented to be separate from skin.
+========================================================================== */
+
+.button__primary {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #303030;
+  border: 1px solid transparent;
+  text-decoration: none;
+  line-height: 1
+}
+
+.button__primary:hover,
+  .button__primary:focus{
+  border: 1px solid #00FFA7;
+  background-color: #303030
+}
+
+.button__secondary {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #7AE2DE;
+  border: 2px solid #7AE2DE;
+  padding: 15px 20px;
+  text-decoration: none;
+  line-height: 1;
+  background-color: #ffffff
+}
+
+.button__secondary:hover{
+  color: #ffffff;
+  background-color: #71D5D2;
+  border-color: #71D5D2
+}
+
+.button__secondary:focus,
+  .button__secondary:active{
+  color: #ffffff;
+  background-color: #7AE2DE;
+  border-color: #7AE2DE
+}
+
+.button--transparent {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent
+}
+
+.button--transparent:hover{
+  color: #F06A48;
+  border-color: #F06A48;
+  background-color: transparent
+}
+
+.button--transparent:focus,
+  .button--transparent:active{
+  color: #F06A48;
+  border-color: #F06A48;
+  background-color: transparent
+}
+
+.button--noBorder {
+  border: none
+}
+
+.button--noBorder:hover,
+  .button--noBorder:active,
+  .button--noBorder:focus{
+  border: none
+}
+
+.button__text-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center
+}
+
+.button__text-icon span:first-child{
+  margin-right: 10px
+}
+
+.button__text-icon:hover,
+  .button__text-icon:focus,
+  .button__text-icon:hover .material-icons,
+  .button__text-icon:focus .material-icons{
+  color: #F06A48
+}
+
+.button__text-icon--vertical {
+  border: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+  color: #95989A
+}
+
+.button__text-icon--vertical .material-icons{
+  color: #ffffff
+}
+
+.button__icon {
+  background-color: #ffffff;
+  border: 1px solid #8A9097;
+  padding: 5px;
+  height: 36px;
+  width: 36px;
+  font-size: 24px
+}
+
+.button__icon:focus,
+  .button__icon:active,
+  .button__icon:hover{
+  color: #F06A48
+}
+
+.button__icon.button--large{
+  height: 48px;
+  width: 48px
+}
+
+.button__icon.button--xlarge{
+  height: 60px;
+  width: 60px
+}
+
+.button__icon-only {
+  background-color: transparent;
+  border: none
+}
+
+.button__icon-only:focus,
+  .button__icon-only:active,
+  .button__icon-only:hover{
+  color: #F06A48;
+  background: transparent
+}
+
+.button__icon:disabled {
+  color: #8A9097
+}
+
+.button__icon:disabled:focus,
+  .button__icon:disabled:active,
+  .button__icon:disabled:hover{
+  cursor: default;
+  color: #8A9097
+}
+
+.button__add-image {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  background: #303030;
+  padding: 5px 10px;
+  z-index: 1
+}
+
+.button__add-image .button__icon .material-icons{
+  color: white
+}
+
+.button__add-image .button__icon:hover .material-icons,
+  .button__add-image .button__icon:focus .material-icons{
+  color: #F06A48
+}
+
+.button--green .material-icons {
+  color: #00FFA7;
+}
