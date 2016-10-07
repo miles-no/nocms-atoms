@@ -5,7 +5,7 @@ Pakke med små, gjenbrukbare komponenter til bruk i NoCMS.
 ### Bruk
 Legg til som en avhengighet i package.justify-content
 ```
-"nocms-editor": "git+ssh://git@bitbucket.org/nocms/nocms-editor.git"
+"nocms-atoms": "git+ssh://git@bitbucket.org/nocms/nocms-atoms.git"
 ```
 
 ### Utvikle
