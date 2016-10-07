@@ -66,7 +66,7 @@ Text.defaultProps = {
   text: '',
   placeholder: 'Skriv tekst',
   editorType: 'simple',
-  activeEditMode: true,
+  activeEditMode: false,
   editMode: true,
   isPublisher: true,
 };

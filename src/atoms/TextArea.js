@@ -66,7 +66,7 @@ TextArea.defaultProps = {
   centerText: false,
   text: '',
   placeholder: 'Skriv tekst',
-  activeEditMode: true,
+  activeEditMode: false,
   paragraph: true,
   editMode: true,
   isPublisher: true,
