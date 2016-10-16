@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 const ReactDOM = require('react-dom');
-import { Text, TextArea, Image, Icon } from 'nocms-atoms';
+import { Text, TextArea, Image, Icon, PageInput } from '../../lib';
 import events from 'nocms-events';
 
 class App extends React.Component {
@@ -11,6 +11,7 @@ class App extends React.Component {
       simple: 'Simple editor',
       linkeditor: 'Editor with link',
       textArea: 'Text area',
+      pageInput: 'Page input',
     };
 
     events.listenTo('nocms.value-changed', (scope, value) => {
@@ -60,6 +61,12 @@ class App extends React.Component {
             <Icon type="face" />
             <Icon type="face" size="large" />
             <Icon type="face" size="xlarge" />
+          </div>
+        </div>
+        <div className="container-wrapper">
+          <div className="container">
+            <h2>Page input</h2>
+            <PageInput value={this.state.pageInput} scope="pageInput" label="Page Input" />
           </div>
         </div>
       </div>
