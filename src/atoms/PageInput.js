@@ -25,7 +25,6 @@ PageInput.propTypes = {
   type: React.PropTypes.string,
   label: React.PropTypes.string,
   value: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
-  config: React.PropTypes.object,
 };
 
 PageInput.defaultProps = {
