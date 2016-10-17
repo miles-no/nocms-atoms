@@ -23,6 +23,7 @@ class App extends React.Component {
 
   render() {
     const options = [{ value: 1, label: 'Val 1' }, { value: 2, label: 'Val 2' }];
+    const stringOptions = ['no', 'en'];
     return (
       <div>
         <div className="container-wrapper">
@@ -69,6 +70,7 @@ class App extends React.Component {
             <h2>Page input</h2>
             <PageInput value={this.state.pageInput} scope="pageInput" label="Page Input" />
             <PageInput type="select" options={options} value={this.state.pageSelect} scope="pageSelect" label="Page select" />
+            <PageInput type="select" options={stringOptions} value={this.state.pageSelectStringOptions} scope="pageSelectStringOptions" label="Page select, string options" />
           </div>
         </div>
       </div>

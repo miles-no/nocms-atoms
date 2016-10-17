@@ -10,16 +10,23 @@ export default class PageInput extends Component {
     events.trigger('nocms.value-changed', this.props.scope, event.target.value);
   }
 
+  getOptionElement(o, idx) {
+    let { label, value } = o;
+    if (typeof o === 'string') {
+      label = o; value = o;
+    }
+    return <option key={idx} value={value}>{label}</option>;
+  }
+
   render() {
     return (
       <label>
         {this.props.label}
         {this.props.type === 'select' ?
           <select className="nocms-select-input" value={this.props.value} onChange={this.handleChange}>
-            {this.props.options.map((o, idx) => <option key={`select_${idx}`} value={o.value}>{o.label || o.value}</option>)}
+            {this.props.options.map(this.getOptionElement)}
           </select>
         : <input className="nocms-text-input" type={this.props.type} value={this.props.value} onChange={this.handleChange} />}
-
       </label>
     );
   }
