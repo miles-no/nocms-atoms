@@ -14,7 +14,12 @@ export default class PageInput extends Component {
     return (
       <label>
         {this.props.label}
-        <input className="nocms-text-input" type={this.props.type} value={this.props.value} onChange={this.handleChange} />
+        {this.props.type === 'select' ?
+          <select className="nocms-select-input" value={this.props.value} onChange={this.handleChange}>
+            {this.props.options.map((o, idx) => <option key={`select_${idx}`} value={o.value}>{o.label || o.value}</option>)}
+          </select>
+        : <input className="nocms-text-input" type={this.props.type} value={this.props.value} onChange={this.handleChange} />}
+
       </label>
     );
   }
@@ -24,9 +29,11 @@ PageInput.propTypes = {
   scope: React.PropTypes.string.isRequired,
   type: React.PropTypes.string,
   label: React.PropTypes.string,
+  options: React.PropTypes.array,
   value: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
 };
 
 PageInput.defaultProps = {
   type: 'text',
+  options: [],
 };
