@@ -24,7 +24,6 @@ class Text extends Component {
       scope,
       activeEditMode,
       editMode,
-      isPublisher,
     } = this.props;
 
     const output = text;
@@ -32,7 +31,7 @@ class Text extends Component {
     let content;
     if (editMode && activeEditMode) {
       content = this.getEditorType(editorType, text, placeholder, scope);
-    } else if (isPublisher && output === '' && !editMode || isPublisher && output === '' && !activeEditMode) {
+    } else if (editMode && output === '') {
       content = placeholder;
     } else {
       content = renderText;
@@ -56,7 +55,6 @@ Text.propTypes = {
   scope: PropTypes.string,
   activeEditMode: PropTypes.bool,
   editMode: PropTypes.bool,
-  isPublisher: PropTypes.bool,
 };
 
 Text.defaultProps = {
@@ -68,7 +66,6 @@ Text.defaultProps = {
   editorType: 'simple',
   activeEditMode: false,
   editMode: true,
-  isPublisher: true,
 };
 
 export default Text;
