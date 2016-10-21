@@ -32,7 +32,6 @@ class TextArea extends Component {
       activeEditMode,
       paragraph,
       editMode,
-      isPublisher,
     } = this.props;
 
     const output = paragraph ? this.encodeToHTML(text) : this.encodeSimple(text);
@@ -40,7 +39,7 @@ class TextArea extends Component {
     let content;
     if (editMode && activeEditMode) {
       content = <SimpleMultiline text={text} placeholder={placeholder} scope={scope} center={centerText} />;
-    } else if (isPublisher && output === '' && !editMode || isPublisher && output === '' && !activeEditMode) {
+    } else if (editMode && output === '') {
       content = placeholder;
     } else {
       content = renderText;
@@ -59,7 +58,6 @@ TextArea.propTypes = {
   activeEditMode: PropTypes.bool,
   paragraph: PropTypes.bool,
   editMode: PropTypes.bool,
-  isPublisher: PropTypes.bool,
 };
 
 TextArea.defaultProps = {
@@ -68,8 +66,7 @@ TextArea.defaultProps = {
   placeholder: 'Skriv tekst',
   activeEditMode: false,
   paragraph: true,
-  editMode: true,
-  isPublisher: true,
+  editMode: false,
 };
 
 module.exports = TextArea;

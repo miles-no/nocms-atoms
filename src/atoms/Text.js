@@ -65,7 +65,7 @@ Text.defaultProps = {
   placeholder: 'Skriv tekst',
   editorType: 'simple',
   activeEditMode: false,
-  editMode: true,
+  editMode: false,
 };
 
 export default Text;
