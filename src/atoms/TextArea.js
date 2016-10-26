@@ -32,13 +32,14 @@ class TextArea extends Component {
       activeEditMode,
       paragraph,
       editMode,
+      autoresize,
     } = this.props;
 
     const output = paragraph ? this.encodeToHTML(text) : this.encodeSimple(text);
     const renderText = <span dangerouslySetInnerHTML={{ __html: output }}></span>;
     let content;
     if (editMode && activeEditMode) {
-      content = <SimpleMultiline text={text} placeholder={placeholder} scope={scope} center={centerText} />;
+      content = <SimpleMultiline text={text} placeholder={placeholder} autoresize={autoresize} scope={scope} center={centerText} />;
     } else if (editMode && output === '') {
       content = placeholder;
     } else {
@@ -58,6 +59,7 @@ TextArea.propTypes = {
   activeEditMode: PropTypes.bool,
   paragraph: PropTypes.bool,
   editMode: PropTypes.bool,
+  autoresize: PropTypes.bool,
 };
 
 TextArea.defaultProps = {
@@ -67,6 +69,7 @@ TextArea.defaultProps = {
   activeEditMode: false,
   paragraph: true,
   editMode: false,
+  autoresize: true,
 };
 
 module.exports = TextArea;
