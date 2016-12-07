@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 const ReactDOM = require('react-dom');
-import { Text, TextArea, Image, Icon, PageInput } from '../../lib';
+import { Text, TextArea, Image, Icon, PageInput } from 'nocms-atoms';
 import events from 'nocms-events';
 
 class App extends React.Component {
