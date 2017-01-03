@@ -1,39 +1,37 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { Simple, LinkEditor } from 'nocms-editor';
 
-class Text extends Component {
-  getEditorType(editorType, text, placeholder, scope) {
-    switch (editorType) {
-      case 'simple':
-        return <Simple text={text} placeholder={placeholder} scope={scope} />;
-      case 'simpleWithLink':
-        return <LinkEditor text={text} placeholder={placeholder} scope={scope} />;
-      default:
-        return <Simple text={text} placeholder={placeholder} scope={scope} />;
-    }
+const getEditorType = (editorType, text, placeholder, scope) => {
+  switch (editorType) {
+    case 'simple':
+      return <Simple text={text} placeholder={placeholder} scope={scope} />;
+    case 'simpleWithLink':
+      return <LinkEditor text={text} placeholder={placeholder} scope={scope} />;
+    default:
+      return <Simple text={text} placeholder={placeholder} scope={scope} />;
   }
+};
 
-  render() {
-    const { inline, isParagraph, className, text, editorType, placeholder, scope, activeEditMode, editMode } = this.props;
-    const output = text;
-    const renderText = isParagraph
-    ? <p dangerouslySetInnerHTML={{ __html: output }}></p>
-    : <span dangerouslySetInnerHTML={{ __html: output }}>
-    </span>;
-    let content;
-    if (editMode && activeEditMode) {
-      content = this.getEditorType(editorType, text, placeholder, scope);
-    } else if (editMode && output === '') {
-      content = placeholder;
-    } else {
-      content = renderText;
-    }
-    const renderedResult = (inline ?
-      <span className={`${className} text-content-inline`}>{content}</span>
-      : <div className={className}>{content}</div>);
-    return renderedResult;
+const Text = (props) => {
+  const { inline, isParagraph, className, text, editorType, placeholder, scope, activeEditMode, editMode } = props;
+  const output = text;
+  const renderText = isParagraph
+  ? <p dangerouslySetInnerHTML={{ __html: output }} />
+  : <span dangerouslySetInnerHTML={{ __html: output }} />;
+  let content;
+  if (editMode && activeEditMode) {
+    content = getEditorType(editorType, text, placeholder, scope);
+  } else if (editMode && output === '') {
+    content = placeholder;
+  } else {
+    content = renderText;
   }
-}
+  const renderedResult = (inline ?
+    <span className={`${className} text-content-inline`}>{content}</span>
+    : <div className={className}>{content}</div>);
+  return renderedResult;
+};
+
 
 Text.propTypes = {
   centerText: PropTypes.bool,
