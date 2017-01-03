@@ -34,8 +34,8 @@ class App extends React.Component {
             <Text text={this.state.simple} placeholder="Test-input" activeEditMode={this.props.activeEditMode} editorType="simple" scope="simple" />
             <Text text={this.state.linkeditor} placeholder="Test-input" activeEditMode={this.props.activeEditMode} editorType="simpleWithLink" scope="linkeditor" />
             <h3>Admin version</h3>
-            <Text text={this.state.simple} placeholder="Test-input" activeEditMode editorType="simple" scope="simple" />
-            <Text text={this.state.linkeditor} placeholder="Test-input" activeEditMode editorType="simpleWithLink" scope="linkeditor" />
+            <Text text={this.state.simple} placeholder="Test-input" activeEditMode editMode editorType="simple" scope="simple" />
+            <Text text={this.state.linkeditor} placeholder="Test-input" activeEditMode editMode editorType="simpleWithLink" scope="linkeditor" />
           </div>
         </div>
         <div className="container-wrapper">
@@ -45,7 +45,7 @@ class App extends React.Component {
             <h3>End user version</h3>
             <TextArea text={this.state.simple} paragraph={false} activeEditMode={this.props.activeEditMode} />
             <h3>Admin version</h3>
-            <TextArea text={this.state.textArea} paragraph={false} activeEditMode scope={this.state.textArea} />
+            <TextArea text={this.state.textArea} paragraph={false} activeEditMode editMode scope={this.state.textArea} />
           </div>
         </div>
         <div className="container-wrapper">
