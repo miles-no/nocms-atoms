@@ -6,12 +6,17 @@ const srMapping = {
   close: 'Lukk',
 };
 
+const iconMapping = {
+  'save-changes': 'update',
+};
+
 const Icon = (props) => {
   const {
-    type,
     size,
     className: customClassName,
   } = props;
+  const type = iconMapping[props.type] || props.type;
+
   let className = `material-icons ${customClassName}`;
   if (size === 'small') {
     className += ' md-18';
