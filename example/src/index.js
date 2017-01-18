@@ -1,7 +1,10 @@
 import React, { PropTypes } from 'react';
 const ReactDOM = require('react-dom');
-import { Text, TextArea, Image, Icon, PageInput } from 'nocms-atoms';
+import { Text, TextArea, Image, Icon, PageInput, Code } from 'nocms-atoms';
 import events from 'nocms-events';
+
+const code = `var data = 1;
+var d = 2;`;
 
 class App extends React.Component {
   constructor(props) {
@@ -26,6 +29,16 @@ class App extends React.Component {
     const stringOptions = ['no', 'en'];
     return (
       <div>
+        <div className="container-wrapper">
+          <div className="container">
+            <h2>Code atom</h2>
+            <p>Simple atom for displaying and highlighting code</p>
+            <Code code={code} placeholder="Skriv kode her" />
+            <Code code={code} editMode={true} activeEditMode={true} placeholder="Skriv kode her" />
+            <Code code={''} placeholder="Skriv kode her" />
+            <Code code={''} editMode={true} activeEditMode={true} placeholder="Skriv kode her" />
+          </div>
+        </div>
         <div className="container-wrapper">
           <div className="container">
             <h2>Text atom</h2>
