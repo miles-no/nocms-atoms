@@ -3,8 +3,16 @@ const ReactDOM = require('react-dom');
 import { Text, TextArea, Image, Icon, PageInput, Code } from 'nocms-atoms';
 import events from 'nocms-events';
 
-const code = `var data = 1;
+const javascript = `var data = 1;
 var d = 2;`;
+
+const jsx = `<MyComponent prop1="test">
+  <MyChildComponent />
+</MyComponent>`;
+
+const markup = `<div class="container">
+  Text
+</div>`;
 
 class App extends React.Component {
   constructor(props) {
@@ -33,8 +41,10 @@ class App extends React.Component {
           <div className="container">
             <h2>Code atom</h2>
             <p>Simple atom for displaying and highlighting code</p>
-            <Code code={code} placeholder="Skriv kode her" />
-            <Code code={''} placeholder="Skriv kode her" />
+            <Code code={javascript} placeholder="Skriv kode her" language="javascript"  />
+            <Code code={jsx} placeholder="Skriv kode her" language="jsx"/>
+            <Code code={markup} placeholder="Skriv kode her" language="markup"/>
+            <Code code={''} placeholder="Skriv kode her"/>
           </div>
         </div>
         <div className="container-wrapper">
