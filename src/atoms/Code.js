@@ -14,7 +14,7 @@ const Code = (props) => {
   return (
     <pre>
       { code ?
-        <code dangerouslySetInnerHTML={{ __html: html }} />
+        <code className={`language-${language}`} dangerouslySetInnerHTML={{ __html: html }} />
         : placeholder }
     </pre>
   );
