@@ -1,27 +1,20 @@
 import React, { PropTypes } from 'react';
 import Prism from 'prismjs';
-import TextArea from './TextArea';
 
 const Code = (props) => {
   const {
     code,
-    activeEditMode,
-    scope,
     placeholder,
+    language,
   } = props;
 
-  if (activeEditMode) {
-    return (
-      <TextArea editMode activeEditMode text={code} scope={scope} placeholder={placeholder} />
-    );
-  }
-
-  const html = Prism.highlight(code, Prism.languages.javascript);
+  const prismLang = Prism.languages[language] || Prism.languages.javascript;
+  const html = Prism.highlight(code, prismLang);
 
   return (
     <pre>
       { code ?
-        <code dangerouslySetInnerHTML={{__html: Prism.highlight(code, Prism.languages.javascript) }} />
+        <code dangerouslySetInnerHTML={{ __html: html }} />
         : placeholder }
     </pre>
   );
@@ -29,10 +22,8 @@ const Code = (props) => {
 
 Code.propTypes = {
   code: PropTypes.string,
-  activeEditMode: PropTypes.bool,
-  editMode: PropTypes.bool,
-  scope: PropTypes.string,
   placeholder: PropTypes.string,
+  language: PropTypes.string,
 };
 
 export default Code;
