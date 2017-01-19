@@ -36,12 +36,10 @@ const Code = (props) => {
   const prismLang = Prism.languages[language] || Prism.languages.javascript;
   const html = Prism.highlight(code, prismLang);
 
-  console.log('lang', language, prismLang, Prism.languages);
-
   return (
-    <pre>
+    <pre className={`language-${language}`}>
       { code ?
-        <code className={`language-${language}`} dangerouslySetInnerHTML={{ __html: html }} />
+        <code className={`language-${language}`} data-manual dangerouslySetInnerHTML={{ __html: html }} />
         : placeholder }
     </pre>
   );
