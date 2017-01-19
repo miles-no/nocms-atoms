@@ -26,4 +26,8 @@ Code.propTypes = {
   language: PropTypes.string,
 };
 
+Code.defaultProps = {
+  language: 'javascript',
+};
+
 export default Code;
