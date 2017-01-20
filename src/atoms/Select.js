@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import events from 'nocms-events';
 
-const onChange = (scope, value) => {
+const defaultOnChange = (scope, value) => {
   events.trigger('nocms.value-changed', scope, value);
 };
 
@@ -11,12 +11,13 @@ const Select = (props) => {
     scope,
     children,
     value,
+    onChange = e => defaultOnChange(scope, e.target.value),
     ...otherProps
   } = props;
 
   if (activeEditMode) {
     return (
-      <select onChange={e => onChange(scope, e.target.value)} value={value} {...otherProps}>
+      <select onChange={onChange} value={value} {...otherProps}>
         {children}
       </select>
     );
@@ -33,6 +34,7 @@ Select.propTypes = {
   scope: PropTypes.string,
   value: PropTypes.string,
   activeEditMode: PropTypes.bool,
+  onChange: PropTypes.func,
   children: PropTypes.oneOfType([
     PropTypes.array,
   ]),
