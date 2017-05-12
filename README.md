@@ -1,28 +1,32 @@
 ## NoCMS atoms
 
-Pakke med små, gjenbrukbare komponenter til bruk i NoCMS.
+Small reusable building blocks for NoCMS.
 
-### Bruk
-Legg til som en avhengighet i package.justify-content
+### Installation
+Install nocms-atoms from NPM and include it in your own React build process (using Browserify, Webpack, etc).
+
 ```
-"nocms-atoms": "git+ssh://git@bitbucket.org/nocms/nocms-atoms.git"
+npm install nocms-atoms --save
 ```
 
-### Utvikle
-Prosjektet inneholder en utviklingsserver.
+### Usage
+
+### Development
+The project contains a dev server.
+
 ```
 $ npm run dev
 ```
-Du kan nå gjøre endringer i src-mappen og se endringene på localhost:9000
+You can now make changes in src-folder and see changes on `localhost:9000`
 
-Når du er ferdig, kjøre
+When finished, run
 ```
 $ npm run prepublish
 ```
-for å generere lib-filer og en bygget versjon.
+to generate lib-files and a built version.
 
 ### Demo
-Se i example-folderen. Koden kan kjøres ved
+Check out the example-folder. Execute by
 ```
 $ npm run dev
 ```
