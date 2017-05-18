@@ -1,6 +1,6 @@
 {
   "name": "nocms-atoms",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Small building blocks for NoCMS",
   "main": "lib/index.js",
   "scripts": {
