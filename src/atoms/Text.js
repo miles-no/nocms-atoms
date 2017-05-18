@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Simple, LinkEditor } from 'nocms-editor';
 
-const getEditorType = (editorType, text, placeholder, scope, selfSaving) => {
+const getEditorType = (editorType, text, placeholder, scope) => {
   switch (editorType) {
     case 'simple':
       return <Simple text={text} placeholder={placeholder} scope={scope} />;
