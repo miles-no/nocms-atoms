@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Prism from 'prismjs';
 
 require('prismjs/components/prism-aspnet.js');

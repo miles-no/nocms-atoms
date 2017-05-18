@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 const ReactDOM = require('react-dom');
 import { Text, TextArea, Image, Icon, PageInput, Code } from 'nocms-atoms';
 import events from 'nocms-events';

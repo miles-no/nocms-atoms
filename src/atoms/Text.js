@@ -1,26 +1,28 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Simple, LinkEditor } from 'nocms-editor';
 
-const getEditorType = (editorType, text, placeholder, scope) => {
+const getEditorType = (editorType, text, placeholder, scope, selfSaving) => {
   switch (editorType) {
     case 'simple':
       return <Simple text={text} placeholder={placeholder} scope={scope} />;
     case 'simpleWithLink':
-      return <LinkEditor text={text} placeholder={placeholder} scope={scope} />;
+      return <LinkEditor text={text} placeholder={placeholder} selfSaving={selfSaving} scope={scope} />;
     default:
       return <Simple text={text} placeholder={placeholder} scope={scope} />;
   }
 };
 
 const Text = (props) => {
-  const { inline, isParagraph, className, text, editorType, placeholder, scope, activeEditMode, editMode } = props;
+  const { inline, isParagraph, className, text, editorType, placeholder, scope, activeEditMode, editMode, selfSaving } = props;
   const output = text;
   const renderText = isParagraph
   ? <p dangerouslySetInnerHTML={{ __html: output }} />
   : <span dangerouslySetInnerHTML={{ __html: output }} />;
   let content;
   if (editMode && activeEditMode) {
-    content = getEditorType(editorType, text, placeholder, scope);
+    console.log('editMode and activeEditMode for text true');
+    content = getEditorType(editorType, text, placeholder, scope, selfSaving);
   } else if (editMode && output === '') {
     content = placeholder;
   } else {
@@ -35,7 +37,6 @@ const Text = (props) => {
 
 Text.propTypes = {
   centerText: PropTypes.bool,
-  type: PropTypes.string,
   inline: PropTypes.bool,
   isParagraph: PropTypes.bool,
   className: PropTypes.string,
@@ -45,6 +46,7 @@ Text.propTypes = {
   scope: PropTypes.string,
   activeEditMode: PropTypes.bool,
   editMode: PropTypes.bool,
+  selfSaving: PropTypes.bool,
 };
 
 Text.defaultProps = {
@@ -56,6 +58,7 @@ Text.defaultProps = {
   editorType: 'simple',
   activeEditMode: false,
   editMode: false,
+  selfSaving: true,
 };
 
 export default Text;

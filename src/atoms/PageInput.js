@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import events from 'nocms-events';
 
 const getOptionElement = (o, idx) => {
@@ -34,11 +35,11 @@ export default class PageInput extends Component {
 }
 
 PageInput.propTypes = {
-  scope: React.PropTypes.string.isRequired,
-  type: React.PropTypes.string,
-  label: React.PropTypes.string,
-  options: React.PropTypes.array,
-  value: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]),
+  scope: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  label: PropTypes.string,
+  options: PropTypes.array,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 PageInput.defaultProps = {
