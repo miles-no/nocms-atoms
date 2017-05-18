@@ -7,22 +7,21 @@ const getEditorType = (editorType, text, placeholder, scope, selfSaving) => {
     case 'simple':
       return <Simple text={text} placeholder={placeholder} scope={scope} />;
     case 'simpleWithLink':
-      return <LinkEditor text={text} placeholder={placeholder} selfSaving={selfSaving} scope={scope} />;
+      return <LinkEditor text={text} placeholder={placeholder} scope={scope} />;
     default:
       return <Simple text={text} placeholder={placeholder} scope={scope} />;
   }
 };
 
 const Text = (props) => {
-  const { inline, isParagraph, className, text, editorType, placeholder, scope, activeEditMode, editMode, selfSaving } = props;
+  const { inline, isParagraph, className, text, editorType, placeholder, scope, activeEditMode, editMode } = props;
   const output = text;
   const renderText = isParagraph
   ? <p dangerouslySetInnerHTML={{ __html: output }} />
   : <span dangerouslySetInnerHTML={{ __html: output }} />;
   let content;
   if (editMode && activeEditMode) {
-    console.log('editMode and activeEditMode for text true');
-    content = getEditorType(editorType, text, placeholder, scope, selfSaving);
+    content = getEditorType(editorType, text, placeholder, scope);
   } else if (editMode && output === '') {
     content = placeholder;
   } else {
@@ -46,7 +45,6 @@ Text.propTypes = {
   scope: PropTypes.string,
   activeEditMode: PropTypes.bool,
   editMode: PropTypes.bool,
-  selfSaving: PropTypes.bool,
 };
 
 Text.defaultProps = {
@@ -58,7 +56,6 @@ Text.defaultProps = {
   editorType: 'simple',
   activeEditMode: false,
   editMode: false,
-  selfSaving: true,
 };
 
 export default Text;
