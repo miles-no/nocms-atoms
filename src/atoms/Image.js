@@ -24,5 +24,4 @@ Image.defaultProps = {
   className: '',
 };
 
-
 export default Image;
