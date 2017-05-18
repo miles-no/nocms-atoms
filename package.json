@@ -9,10 +9,9 @@
     "prepublish": "babel ./src --out-dir ./lib --source-maps --presets es2015,react,stage-1 --plugins babel-plugin-add-module-exports"
   },
   "dependencies": {
-    "nocms-editor": "0.0.3",
+    "nocms-editor": "0.0.4",
     "nocms-events": "^0.1.2",
-    "prismjs": "^1.6.0",
-    "prop-types": "^15.5.10"
+    "prismjs": "^1.6.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -32,12 +31,14 @@
     "eslint-plugin-react": "^6.8.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
+    "prop-types": "^15.5.10",
     "watch": "^0.19.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   },
   "peerDependencies": {
-    "react": "^15.0.0"
+    "react": "^15.0.0",
+    "prop-types": "^15.5.10"
   },
   "author": "Miles",
   "license": "ISC"
