@@ -1,14 +1,15 @@
 {
   "name": "nocms-atoms",
-  "version": "1.0.0",
+  "version": "0.0.0-semantic-release",
   "description": "Small building blocks for NoCMS",
   "main": "lib/index.js",
   "scripts": {
     "dev": "webpack --watch --inline",
     "test": "",
-    "prepublish": "babel ./src --out-dir ./lib --source-maps --presets es2015,react,stage-1 --plugins babel-plugin-add-module-exports"
+    "prepublish": "babel ./src --out-dir ./lib --source-maps --presets es2015,react,stage-1 --plugins babel-plugin-add-module-exports",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/miles-no/nocms-atoms"
   },
@@ -27,15 +28,17 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-1": "^6.16.0",
+    "condition-circle": "^1.5.0",
     "eslint": "^3.12.2",
-    "eslint-loader": "^1.6.1",
     "eslint-config-webteam": "^1.1.1",
+    "eslint-loader": "^1.6.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.8.0",
+    "prop-types": "^15.5.10",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
-    "prop-types": "^15.5.10",
+    "semantic-release": "^6.3.6",
     "watch": "^0.19.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
@@ -45,5 +48,9 @@
     "prop-types": "^15.5.10"
   },
   "author": "Miles",
-  "license": "ISC"
+  "license": "ISC",
+  "release": {
+    "verifyConditions": "condition-circle",
+    "debug": false
+  }
 }
