@@ -14,7 +14,7 @@
     "url": "https://github.com/miles-no/nocms-atoms"
   },
   "dependencies": {
-    "nocms-editor": "0.0.4",
+    "nocms-editor": "^1.0.1",
     "nocms-events": "1.1.1",
     "prismjs": "^1.6.0"
   },
