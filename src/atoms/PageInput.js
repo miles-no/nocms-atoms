@@ -28,7 +28,7 @@ export default class PageInput extends Component {
           <select className="nocms-select-input" value={this.props.value} onChange={this.handleChange}>
             {this.props.options.map(getOptionElement)}
           </select>
-        : <input className="nocms-text-input" type={this.props.type} value={this.props.value} onChange={this.handleChange} />}
+          : <input className="nocms-text-input" type={this.props.type} value={this.props.value} onChange={this.handleChange} />}
       </label>
     );
   }

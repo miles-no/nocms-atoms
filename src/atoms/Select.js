@@ -12,7 +12,7 @@ const Select = (props) => {
     scope,
     children,
     value,
-    onChange = e => defaultOnChange(scope, e.target.value),
+    onChange = (e) => { defaultOnChange(scope, e.target.value); },
     ...otherProps
   } = props;
 
@@ -24,7 +24,9 @@ const Select = (props) => {
     );
   }
 
-  const selectedOption = children.filter(child => child.props.value === value).map(child => child.props['data-label']);
+  const selectedOption = children
+    .filter((child) => { return child.props.value === value; })
+    .map((child) => { return child.props['data-label']; });
 
   return (
     <span>{selectedOption.length > 0 ? selectedOption.join(', ') : ''}</span>
@@ -36,9 +38,7 @@ Select.propTypes = {
   value: PropTypes.string,
   activeEditMode: PropTypes.bool,
   onChange: PropTypes.func,
-  children: PropTypes.oneOfType([
-    PropTypes.array,
-  ]),
+  children: PropTypes.array,
 };
 
 export default Select;

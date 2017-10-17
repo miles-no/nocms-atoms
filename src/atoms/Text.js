@@ -1,3 +1,4 @@
+/* eslint react/no-danger: off */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Simple, LinkEditor } from 'nocms-editor';
@@ -17,8 +18,8 @@ const Text = (props) => {
   const { inline, isParagraph, className, text, editorType, placeholder, scope, activeEditMode, editMode } = props;
   const output = text;
   const renderText = isParagraph
-  ? <p dangerouslySetInnerHTML={{ __html: output }} />
-  : <span dangerouslySetInnerHTML={{ __html: output }} />;
+    ? <p dangerouslySetInnerHTML={{ __html: output }} />
+    : <span dangerouslySetInnerHTML={{ __html: output }} />;
   let content;
   if (editMode && activeEditMode) {
     content = getEditorType(editorType, text, placeholder, scope);
