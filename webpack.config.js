@@ -1,20 +1,20 @@
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var path = require('path');
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
+const path = require('path');
 
-var host = '0.0.0.0';
-var port = '9000';
+const host = '0.0.0.0';
+const port = '9000';
 
-var config = {
+const config = {
   entry: './example/src',
   devtool: 'source-map',
   output: {
-    path: __dirname + '/example/build',
+    path: path.join(__dirname, '/example/build'),
     filename: 'app.js',
-    publicPath: __dirname + '/example',
+    publicPath: path.join(__dirname, '/example'),
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /(\.jsx|\.js)$/,
         loader: 'babel',
@@ -34,17 +34,17 @@ var config = {
   },
 };
 
+/* eslint no-console: off */
 new WebpackDevServer(webpack(config), {
-  contentBase: './example',
+  contentBase: path.resolve(__dirname, './example'),
   hot: true,
-  debug: true,
-}).listen(port, host, function (err, result) {
+}).listen(port, host, (err) => {
   if (err) {
     console.log(err);
   }
 });
 console.log('-------------------------');
-console.log('Local web server runs at http://' + host + ':' + port);
+console.log(`Local web server runs at http://${host}:${port}`);
 console.log('-------------------------');
 
 module.exports = config;
