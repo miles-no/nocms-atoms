@@ -40,7 +40,7 @@
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "semantic-release": "^6.3.6",
-    "watch": "^0.19.1",
+    "watch": "^1.0.2",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.2"
   },
