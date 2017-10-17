@@ -1,7 +1,7 @@
-export Text from './atoms/Text.js';
-export TextArea from './atoms/TextArea.js';
-export Image from './atoms/Image.js';
-export Icon from './atoms/Icon.js';
-export PageInput from './atoms/PageInput.js';
-export Code from './atoms/Code.js';
-export Select from './atoms/Select.js';
+export { default as Text } from './atoms/Text.js';
+export { default as TextArea } from './atoms/TextArea.js';
+export { default as Image } from './atoms/Image.js';
+export { default as Icon } from './atoms/Icon.js';
+export { default as PageInput } from './atoms/PageInput.js';
+export { default as Code } from './atoms/Code.js';
+export { default as Select } from './atoms/Select.js';
