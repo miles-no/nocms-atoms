@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { Text, TextArea, Image, Icon, PageInput, Code } from 'nocms-atoms';
-import events from 'nocms-events';
+import { listenToGlobal } from 'nocms-events';
 
 const javascript = `var data = 1;
 var d = 2;`;
@@ -26,7 +26,7 @@ class App extends React.Component {
       pageInput: 'Page input',
     };
 
-    events.listenTo('nocms.value-changed', (scope, value) => {
+    listenToGlobal('nocms.value-changed', (scope, value) => {
       const state = {};
       state[scope] = value;
       this.setState(state);

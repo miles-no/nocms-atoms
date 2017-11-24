@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import events from 'nocms-events';
+import { triggerGlobal } from 'nocms-events';
 
 const getOptionElement = (o, idx) => {
   let { label, value } = o;
@@ -17,7 +17,7 @@ export default class PageInput extends Component {
   }
 
   handleChange(event) {
-    events.trigger('nocms.value-changed', this.props.scope, event.target.value);
+    triggerGlobal('nocms.value-changed', this.props.scope, event.target.value);
   }
 
   render() {

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import events from 'nocms-events';
+import { triggerGlobal } from 'nocms-events';
 
 const defaultOnChange = (scope, value) => {
-  events.trigger('nocms.value-changed', scope, value);
+  triggerGlobal('nocms.value-changed', scope, value);
 };
 
 const Select = (props) => {
