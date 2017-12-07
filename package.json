@@ -17,7 +17,7 @@
   "dependencies": {
     "nocms-editor": "^1.2.0",
     "nocms-events": "^1.2.0",
-    "prismjs": "^1.8.1"
+    "prismjs": "^1.9.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
