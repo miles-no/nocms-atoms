@@ -27,10 +27,10 @@ const Icon = (props) => {
     className += ' md-48';
   }
   return (
-    <span>
+    <>
       <i className={className}>{type}</i>
       <span className="sr-only">{srMapping[type] || type}</span>
-    </span>
+    </>
   );
 };
 
