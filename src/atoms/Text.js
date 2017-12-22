@@ -1,7 +1,7 @@
 /* eslint react/no-danger: off */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Simple, LinkEditor } from 'nocms-editor';
+import { Simple, LinkEditor, PlainTextEditor } from 'nocms-editor';
 
 const getEditorType = (editorType, text, placeholder, scope) => {
   switch (editorType) {
@@ -9,6 +9,8 @@ const getEditorType = (editorType, text, placeholder, scope) => {
       return <Simple text={text} placeholder={placeholder} scope={scope} />;
     case 'simpleWithLink':
       return <LinkEditor text={text} placeholder={placeholder} scope={scope} />;
+    case 'multiline':
+      return <PlainTextEditor text={text} placeholder={placeholder} scope={scope} />;
     default:
       return <Simple text={text} placeholder={placeholder} scope={scope} />;
   }
