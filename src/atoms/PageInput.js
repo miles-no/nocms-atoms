@@ -18,6 +18,9 @@ export default class PageInput extends Component {
 
   handleChange(event) {
     triggerGlobal('nocms.value-changed', this.props.scope, event.target.value);
+    if (this.props.onChange) {
+      this.props.onChange(event.target.value);
+    }
   }
 
   render() {
@@ -39,6 +42,7 @@ PageInput.propTypes = {
   type: PropTypes.string,
   label: PropTypes.string,
   options: PropTypes.array,
+  onChange: PropTypes.function,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
