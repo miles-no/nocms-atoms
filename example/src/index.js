@@ -48,7 +48,6 @@ class App extends React.Component {
   }
 
   toggleActiveEditMode(e) {
-    console.log(e);
     this.setState({ activeEditMode: e.currentTarget.checked });
   }
 
