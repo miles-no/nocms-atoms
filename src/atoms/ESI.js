@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -7,7 +8,7 @@ export default class ESI extends Component {
     const include = 'include';
 
     let output;
-    if (!!this.props.content) {
+    if (!this.props.content) {
       if (this.props.content.indexOf(esi) === 0 && global.environment === 'server') {
         output = this.props.content.replace('jsonEncode=true', '');
       } else {

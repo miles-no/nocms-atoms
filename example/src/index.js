@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import { Text, TextArea, Image, Icon, PageInput, Code } from 'nocms-atoms';
+import { Text, TextArea, Image, Icon, PageInput, Code, Link } from 'nocms-atoms';
 import { listenToGlobal } from 'nocms-events';
 
 const javascript = `var data = 1;
@@ -24,6 +24,8 @@ class App extends React.Component {
       linkeditor: 'Editor with link',
       textArea: 'Text area',
       pageInput: 'Page input',
+      editMode: false,
+      activeEditMode: false,
     };
 
     listenToGlobal('nocms.value-changed', (scope, value) => {
@@ -31,6 +33,23 @@ class App extends React.Component {
       state[scope] = value;
       this.setState(state);
     });
+    this.toggleEditMode = this.toggleEditMode.bind(this);
+    this.toggleActiveEditMode = this.toggleActiveEditMode.bind(this);
+  }
+
+  getChildContext() {
+    return {
+      editMode: this.state.editMode,
+    };
+  }
+
+  toggleEditMode(e) {
+    this.setState({ editMode: e.currentTarget.checked });
+  }
+
+  toggleActiveEditMode(e) {
+    console.log(e);
+    this.setState({ activeEditMode: e.currentTarget.checked });
   }
 
   render() {
@@ -38,6 +57,13 @@ class App extends React.Component {
     const stringOptions = ['no', 'en'];
     return (
       <div>
+        <div className="container-wrapper">
+          <div className="container">
+            <h2>Edit mode</h2>
+            <label><input type="checkbox" checked={this.state.editMode} onChange={this.toggleEditMode} /> Edit mode</label>
+            <label><input type="checkbox" checked={this.state.editMode && this.state.activeEditMode} onChange={this.toggleActiveEditMode} /> Active edit mode</label>
+          </div>
+        </div>
         <div className="container-wrapper">
           <div className="container">
             <h2>Code atom</h2>
@@ -53,8 +79,8 @@ class App extends React.Component {
             <h2>Text atom</h2>
             <p>Simple atom for displaying text. Offers a few different editor types, see nocms-forms package.</p>
             <h3>End user version</h3>
-            <Text text={this.state.simple} placeholder="Test-input" activeEditMode={this.props.activeEditMode} editorType="simple" scope="simple" />
-            <Text text={this.state.linkeditor} placeholder="Test-input" activeEditMode={this.props.activeEditMode} editorType="simpleWithLink" scope="linkeditor" />
+            <Text text={this.state.simple} placeholder="Test-input" activeEditMode={this.state.activeEditMode} editorType="simple" scope="simple" />
+            <Text text={this.state.linkeditor} placeholder="Test-input" activeEditMode={this.state.activeEditMode} editorType="simpleWithLink" scope="linkeditor" />
             <h3>Admin version</h3>
             <Text text={this.state.simple} placeholder="Test-input" activeEditMode editMode editorType="simple" scope="simple" />
             <Text text={this.state.linkeditor} placeholder="Test-input" activeEditMode editMode editorType="simpleWithLink" scope="linkeditor" />
@@ -65,7 +91,7 @@ class App extends React.Component {
             <h2>Text area atom</h2>
             <p>Simple atom for multiline text.</p>
             <h3>End user version</h3>
-            <TextArea text={this.state.simple} paragraph={false} activeEditMode={this.props.activeEditMode} />
+            <TextArea text={this.state.simple} paragraph={false} activeEditMode={this.state.activeEditMode} />
             <h3>Admin version</h3>
             <TextArea text={this.state.textArea} paragraph={false} activeEditMode editMode scope={this.state.textArea} />
           </div>
@@ -95,6 +121,12 @@ class App extends React.Component {
             <PageInput type="select" options={stringOptions} value={this.state.pageSelectStringOptions} scope="pageSelectStringOptions" label="Page select, string options" />
           </div>
         </div>
+        <div className="container-wrapper">
+          <div className="container">
+            <h2>Links</h2>
+            <Link activeEditMode={this.state.activeEditMode} scope="example.link" />
+          </div>
+        </div>
       </div>
     );
   }
@@ -106,6 +138,10 @@ App.propTypes = {
 
 App.defaultProps = {
   activeEditMode: false,
+};
+
+App.childContextTypes = {
+  editMode: PropTypes.bool,
 };
 
 ReactDOM.render(<App />, document.getElementById('app'));

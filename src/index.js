@@ -6,4 +6,4 @@ export { default as PageInput } from './atoms/PageInput.js';
 export { default as Code } from './atoms/Code.js';
 export { default as Select } from './atoms/Select.js';
 export { default as ESI } from './atoms/ESI.js';
-
+export { default as Link } from './atoms/Link.js';
