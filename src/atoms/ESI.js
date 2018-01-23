@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ajax from 'nocms-ajax';
+import { isBrowser } from 'nocms-utils';
 
 export default class ESI extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ export default class ESI extends Component {
     this.state = {
       content: null,
     };
-    if (global.environment !== 'server') {
+    if (isBrowser()) {
       this.loadSrc = this.loadSrc.bind(this);
       this.loadSrc(props.src);
     }
@@ -19,7 +20,7 @@ export default class ESI extends Component {
     }
   }
   loadSrc(src) {
-    if (global.environment !== 'server') {
+    if (isBrowser()) {
       ajax.get(src, { contentType: 'text/html' }, (err, res) => {
         if (err) {
           return;
@@ -32,7 +33,7 @@ export default class ESI extends Component {
     const esi = `${String.fromCharCode(60)}esi:`;
     const include = 'include';
     let output = '';
-    if (global.environment === 'server') {
+    if (!isBrowser()) {
       output = `${esi}${include} src="${this.props.src}" />`;
     } else {
       output = this.state.content || '';
