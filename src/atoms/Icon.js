@@ -1,12 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// TODO: Språkstøtte, maybe baby
-const srMapping = {
-  edit: 'Rediger',
-  close: 'Lukk',
-};
-
 const iconMapping = {
   'save-changes': 'update',
 };
@@ -15,6 +9,7 @@ const Icon = (props) => {
   const {
     size,
     className: customClassName,
+    srText,
   } = props;
   const type = iconMapping[props.type] || props.type;
 
@@ -29,7 +24,7 @@ const Icon = (props) => {
   return (
     <span>
       <i className={className}>{type}</i>
-      <span className="sr-only">{srMapping[type] || type}</span>
+      <span className="sr-only">{srText || type}</span>
     </span>
   );
 };
@@ -38,6 +33,7 @@ Icon.propTypes = {
   type: PropTypes.string,
   size: PropTypes.string,
   className: PropTypes.string,
+  srText: PropTypes.string,
 };
 
 Icon.defaultProps = {
