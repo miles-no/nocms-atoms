@@ -7,3 +7,5 @@ export { default as Code } from './atoms/Code.js';
 export { default as Select } from './atoms/Select.js';
 export { default as ESI } from './atoms/ESI.js';
 export { default as Link } from './atoms/Link.js';
+export { default as IconButton } from './atoms/IconButton';
+export { default as LinkButton } from './atoms/LinkButton';

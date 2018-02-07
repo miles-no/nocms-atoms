@@ -14,7 +14,19 @@ Install nocms-atoms from NPM and include it in your own React build process (usi
 npm install nocms-atoms --save
 ```
 
-### Usage
+### Features
+Text
+TextArea **deprecated** Use Text with multiline instead
+Image
+Icon
+PageInput
+Code
+Select
+ESI
+Link
+IconButton
+LinkButton
+
 
 ### Development
 The project contains a dev server.

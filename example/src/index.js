@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import { Text, TextArea, Image, Icon, PageInput, Code, Link } from 'nocms-atoms';
+import { Text, TextArea, Image, Icon, PageInput, Code, Link, LinkButton } from 'nocms-atoms';
 import { listenToGlobal } from 'nocms-events';
 
 const javascript = `var data = 1;
@@ -100,6 +100,14 @@ class App extends React.Component {
             <h2>Image atom</h2>
             <p>Simple atom for images. WIP.</p>
             <Image src="/src/img/hero.jpg" alt="Bilde" className="small-image" />
+          </div>
+        </div>
+        <div className="container-wrapper">
+          <div className="container">
+            <h2>Link button</h2>
+            <p>Link button with admin display</p>
+            <LinkButton content={{ title: '', url: 'www.nrk.no' }} scope="test" />
+            <LinkButton content={{ title: 'test', url: 'www.nrk.no' }} activeEditMode={this.state.activeEditMode} scope="test" />
           </div>
         </div>
         <div className="container-wrapper">
