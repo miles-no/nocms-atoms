@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "nocms-ajax": "^1.1.1",
-    "nocms-editor": "^1.5.1",
+    "nocms-editor": "^1.6.0",
     "nocms-events": "^1.2.0",
     "nocms-utils": "^1.2.0",
     "prismjs": "^1.9.0"
